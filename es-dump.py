@@ -6,7 +6,7 @@ warnings.filterwarnings('ignore')
 
 load_dotenv()
 
-client = es(hosts=os.environ.get('HOST_ELASTICSEARCH'), basic_auth=(os.environ.get('HOST_BASICAUTH_USERNAME'), os.environ.get('HOST_BASICAUTH_PASSWORD')), verify_certs=False, timeout=180, max_retries=10, retry_on_timeout=True)
+client = es(hosts=os.environ.get('HOST_ELASTICSEARCH'), basic_auth=(os.environ.get('ELASTICSEARCH_BASICAUTH_USERNAME'), os.environ.get('ELASTICSEARCH_BASICAUTH_PASSWORD')), verify_certs=False, timeout=180, max_retries=10, retry_on_timeout=True)
 
 def getdata(idx, filename, size):
 	print(f"Create scroll index for index {idx}, size {size}")
